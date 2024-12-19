@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    
+  <section class="sidemenu">
+    <div class="container">
+      <div class="row">
+    
+        <!-- Sidebar Navigation -->
+        <div id="sidebar" class="col-md-4">
+          <h3 class="text-center text-info">Admin Dashboard</h3>
+          <ul class="nav flex-column">
+            <!-- Homepage Section -->
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="collapse" href="#homepageMenu" role="button" aria-expanded="false" aria-controls="homepageMenu">
+                Homepage <span class="caret"></span>
+              </a>
+              <ul class="collapse list-unstyled" id="homepageMenu">
+                <li><a class="dropdown-item" href="#" onclick="showForm('Homepage')">Homepage Form</a></li>
+                <li><a class="dropdown-item" href="#" onclick="showTable('Homepage')">Manage Homepage</a></li>
+              </ul>
+            </li>
+    
+            <!-- Contact Me Section -->
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="collapse" href="#contactMenu" role="button" aria-expanded="false" aria-controls="contactMenu">
+                Contact Me <span class="caret"></span>
+              </a>
+              <ul class="collapse list-unstyled" id="contactMenu">
+                <li><a class="dropdown-item" href="#" onclick="showForm('ContactMe')">Contact Me Form</a></li>
+                <li><a class="dropdown-item" href="#" onclick="showTable('ContactMe')">Manage Contact Me</a></li>
+              </ul>
+            </li>
+    
+            <!-- Work Stack Section -->
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="collapse" href="#workStackMenu" role="button" aria-expanded="false" aria-controls="workStackMenu">
+                Work Stack <span class="caret"></span>
+              </a>
+              <ul class="collapse list-unstyled" id="workStackMenu">
+                <li><a class="dropdown-item" href="#" onclick="showForm('WorkStack')">Work Stack Form</a></li>
+                <li><a class="dropdown-item" href="#" onclick="showTable('WorkStack')">Manage Work Stack</a></li>
+              </ul>
+            </li>
+    
+            <!-- Certification Section -->
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="collapse" href="#certificationMenu" role="button" aria-expanded="false" aria-controls="certificationMenu">
+                Certification <span class="caret"></span>
+              </a>
+              <ul class="collapse list-unstyled" id="certificationMenu">
+                <li><a class="dropdown-item" href="#" onclick="showForm('Certification')">Certification Form</a></li>
+                <li><a class="dropdown-item" href="#" onclick="showTable('Certification')">Manage Certification</a></li>
+              </ul>
+            </li>
+    
+            <!-- Biography Section -->
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="collapse" href="#biographyMenu" role="button" aria-expanded="false" aria-controls="biographyMenu">
+                Biography <span class="caret"></span>
+              </a>
+              <ul class="collapse list-unstyled" id="biographyMenu">
+                <li><a class="dropdown-item" href="#" onclick="showForm('Biography')">Biography Form</a></li>
+                <li><a class="dropdown-item" href="#" onclick="showTable('Biography')">Manage Biography</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+    
+        <!-- Content Display Section -->
+        <div class="col-md-8">
+          <!-- Form Sections for Each Option -->
+          <div id="formContainer" style="display: none;">
+            <h4 id="formTitle" class="text-info"></h4>
+    
+            <!-- Homepage Form -->
+            <div id="HomepageForm" class="form-section" style="display: none;">
+              <form>
+                <div class="mb-3">
+                  <label for="homepageTitle" class="form-label text-white">Homepage Title</label>
+                  <input type="text" class="form-control" id="homepageTitle" placeholder="Enter title">
+                </div>
+                <div class="mb-3">
+                  <label for="homepageImage" class="form-label text-white">Homepage Image</label>
+                  <input type="file" class="form-control" id="homepageImage">
+                </div>
+                <div class="mb-3">
+                  <label for="homepageParagraph" class="form-label text-white">Homepage Paragraph</label>
+                  <input type="text" class="form-control" id="homepageParagraph" placeholder="Enter text">
+                </div>
+                <div class="mb-3">
+                  <label for="homepageImage" class="form-label text-white">Homepage Gallery-img1</label>  
+                  <input type="file" class="form-control" id="homepageImage">
+                </div>
+                <div class="mb-3">
+                  <label for="homepageImage" class="form-label text-white">Homepage Gallery-img2</label>  
+                  <input type="file" class="form-control" id="homepageImage">
+                </div>
+                <div class="mb-3">
+                  <label for="homepageImage" class="form-label text-white">Homepage Gallery-img3</label>  
+                  <input type="file" class="form-control" id="homepageImage">
+                </div>
+                <div class="mb-3">
+                  <label for="homepageTitle" class="form-label text-white">Bio Title</label>
+                  <input type="text" class="form-control" id="homepageTitle" placeholder="Enter title">
+                </div>
+                <div class="mb-3">
+                  <label for="homepageTitle" class="form-label text-white">Bio Paragraph</label>
+                  <input type="text" class="form-control" id="homepageTitle" placeholder="Enter title">
+                </div>
+                <button type="submit" class="btn btn-primary">Update</button>
+              </form>
+            </div>
+    
+            <!-- Contact Me Form -->
+            <div id="ContactMeForm" class="form-section" style="display: none;">
+              <form>
+                <div class="mb-3">
+                  <label for="homepageImage" class="form-label text-white">contact Image</label>
+                  <input type="file" class="form-control" id="homepageImage">
+                </div>
+                <h4 class="text-white">How to contact me</h4>
+                <div class="mb-3">
+                  <label for="homepageTitle" class="form-label text-white">Whatsapp</label>
+                  <input type="text" class="form-control" id="homepageTitle" placeholder="Enter title">
+                </div>
+                <div class="mb-3">
+                  <label for="homepageTitle" class="form-label text-white">Facebook</label>
+                  <input type="text" class="form-control" id="homepageTitle" placeholder="Enter title">
+                </div>
+                <div class="mb-3">
+                  <label for="homepageTitle" class="form-label text-white">Linkedin</label>
+                  <input type="text" class="form-control" id="homepageTitle" placeholder="Enter title">
+                </div>
+                <div class="mb-3">
+                  <label for="homepageTitle" class="form-label text-white">G-MAIL</label>
+                  <input type="text" class="form-control" id="homepageTitle" placeholder="Enter title">
+                </div>
+                <div class="mb-3">
+                  <label for="homepageTitle" class="form-label text-white">Bio Title</label>
+                  <input type="text" class="form-control" id="homepageTitle" placeholder="Enter title">
+                </div>
+                <div class="mb-3">
+                  <label for="homepageTitle" class="form-label text-white">Bio Paragraph</label>
+                  <input type="text" class="form-control" id="homepageTitle" placeholder="Enter title">
+                </div>
+                <button type="submit" class="btn btn-primary">Update</button>
+              </form>
+            </div>
+    
+            <!-- Work Stack Form -->
+            <div id="WorkStackForm" class="form-section" style="display: none;">
+              <form>
+                <div class="mb-3">
+                  <label for="homepageImage" class="form-label text-white">Work-stack image</label>  
+                  <input type="file" class="form-control" id="homepageImage">
+                </div>
+                <div class="mb-3">
+                  <label for="workStackTitle" class="form-label text-white">Work-stack Title</label>
+                  <input type="text" class="form-control" id="workStackTitle" placeholder="Enter title">
+                </div>
+                <div class="mb-3">
+                  <label for="workStackTitle" class="form-label text-white">Work-stack Paragraph</label>
+                  <input type="text" class="form-control" id="workStackTitle" placeholder="Enter title">
+                </div>
+                <div class="mb-3">
+                  <label for="workStackDescription" class="form-label text-white">Button</label>
+                  <textarea class="form-control" id="workStackDescription" placeholder="Enter description"></textarea>
+                </div>
+                <div class="mb-3">
+                  <label for="homepageTitle" class="form-label text-white">Bio Title</label>
+                  <input type="text" class="form-control" id="homepageTitle" placeholder="Enter title">
+                </div>
+                <div class="mb-3">
+                  <label for="homepageTitle" class="form-label text-white">Bio Paragraph</label>
+                  <input type="text" class="form-control" id="homepageTitle" placeholder="Enter title">
+                </div>
+                <button type="submit" class="btn btn-primary">Update</button>
+              </form>
+            </div>
+    
+            <!-- Certification Form -->
+            <div id="CertificationForm" class="form-section" style="display: none;">
+              <form>
+                <div class="mb-3">
+                  <label for="homepageImage" class="form-label text-white">Certification image</label>  
+                  <input type="file" class="form-control" id="homepageImage">
+                </div>
+                <div class="mb-3">
+                  <label for="workStackTitle" class="form-label text-white">Certification Title</label>
+                  <input type="text" class="form-control" id="workStackTitle" placeholder="Enter title">
+                </div>
+                <div class="mb-3">
+                  <label for="workStackTitle" class="form-label text-white">Certidfication Paragraph</label>
+                  <input type="text" class="form-control" id="workStackTitle" placeholder="Enter title">
+                </div>
+                <div class="mb-3">
+                  <label for="workStackDescription" class="form-label text-white">Button</label>
+                  <textarea class="form-control" id="workStackDescription" placeholder="Enter description"></textarea>
+                </div>
+                <div class="mb-3">
+                  <label for="homepageTitle" class="form-label text-white">Bio Title</label>
+                  <input type="text" class="form-control" id="homepageTitle" placeholder="Enter title">
+                </div>
+                <div class="mb-3">
+                  <label for="homepageTitle" class="form-label text-white">Bio Paragraph</label>
+                  <input type="text" class="form-control" id="homepageTitle" placeholder="Enter title">
+                </div>
+                <button type="submit" class="btn btn-primary">Update</button>
+              </form>
+            </div>
+    
+            <!-- Biography Form -->
+            <div id="BiographyForm" class="form-section" style="display: none;">
+              <form>
+                <div class="mb-3">
+                  <label for="homepageImage" class="form-label text-white">Biography image</label>  
+                  <input type="file" class="form-control" id="homepageImage">
+                </div>
+                <div class="mb-3">
+                  <label for="bioTitle" class="form-label text-white">Biography Title</label>
+                  <input type="text" class="form-control" id="bioTitle" placeholder="Enter title">
+                </div>
+                <div class="mb-3">
+                  <label for="bioContent" class="form-label text-white">Biography paragraph</label>
+                  <textarea class="form-control" id="bioContent" placeholder="Enter biography content"></textarea>
+                </div>
+                <div class="mb-3">
+                  <label for="workStackDescription" class="form-label text-white">Biography Button</label>
+                  <textarea class="form-control" id="workStackDescription" placeholder="Enter description"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Update</button>
+              </form>
+            </div>
+    
+          </div>
+    
+          <!-- Table Section -->
+          <div id="tableContainer" style="display: none;">
+            <h4 id="tableTitle" class="text-info"></h4>
+    
+            <!-- Homepage Table -->
+            <div id="HomepageTable" class="table-section" style="display: none;">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>#ID</th>
+                    <th>Homepage Title</th>
+                    <th>Homepage Image</th>
+                    <th>Homepage Paragraph</th>
+                    <th>Gallery-img1</th>
+                    <th>Gallery-img2</th>
+                    <th>Gallery-img3</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Add rows dynamically -->
+                </tbody>
+              </table>
+            </div>
+    
+            <!-- Contact Me Table -->
+            <div id="ContactMeTable" class="table-section" style="display: none;">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>#ID</th>
+                    <th>Contact image</th>
+                    <th>Whatsapp</th>
+                    <th>Facebook</th>
+                    <th>Gmail</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Add rows dynamically -->
+                </tbody>
+              </table>
+            </div>
+    
+            <!-- Work Stack Table -->
+            <div id="WorkStackTable" class="table-section" style="display: none;">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>#ID</th>
+                    <th>Workstack image</th>
+                    <th>workstack Title</th>
+                    <th>workstack Paragraph</th>
+                    <th>workstack Paragraph</th>
+                    <th>Button</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Add rows dynamically -->
+                </tbody>
+              </table>
+            </div>
+    
+            <!-- Certification Table -->
+            <div id="CertificationTable" class="table-section" style="display: none;">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>#ID</th>
+                    <th>Certification image</th>
+                    <th>Certification Title</th>
+                    <th>Certification paragraph</th>
+                    <th>Button</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Add rows dynamically -->
+                </tbody>
+              </table>
+            </div>
+    
+            <!-- Biography Table -->
+            <div id="BiographyTable" class="table-section" style="display: none;">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>#ID</th>
+                    <th>Biography image</th>
+                    <th>Biography title</th>
+                    <th>Biography paragraph</th>
+                    <th>Biography button</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Add rows dynamically -->
+                </tbody>
+              </table>
+            </div>
+    
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- JavaScript to Toggle Forms and Tables -->
+  <script>
+    function showForm(section) {
+      document.getElementById('formContainer').style.display = 'block';
+      document.getElementById('tableContainer').style.display = 'none';
+      // Hide all forms
+      let forms = document.querySelectorAll('.form-section');
+      forms.forEach(form => form.style.display = 'none');
+      // Show the selected form
+      document.getElementById(section + 'Form').style.display = 'block';
+      document.getElementById('formTitle').innerText = section + ' Form';
+    }
+  
+    function showTable(section) {
+      document.getElementById('formContainer').style.display = 'none';
+      document.getElementById('tableContainer').style.display = 'block';
+      // Hide all tables
+      let tables = document.querySelectorAll('.table-section');
+      tables.forEach(table => table.style.display = 'none');
+      // Show the selected table
+      document.getElementById(section + 'Table').style.display = 'block';
+      document.getElementById('tableTitle').innerText = 'Manage ' + section;
+    }
+  </script>
+  
+  <!-- Include Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  
